@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user.password = params[:password]
     if @user.save
       redirect to '/login'
-    else erb :"users/new.html"
+    else erb :"users/new.html" #rendering, rather than redirecting, because want to keep @user information during this one request.
     end
   end
 end
